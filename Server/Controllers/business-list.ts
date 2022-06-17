@@ -16,7 +16,7 @@ export function DisplayBusinessListPage(req: express.Request, res: express.Respo
         res.end(err);
       }
       res.render('index', { title: 'Business Contact List', page: 'business-list', business: businessCollection, displayName:  UserDisplayName(req)  });
-    });
+    }).sort({Name: 1});
 }
 
 
