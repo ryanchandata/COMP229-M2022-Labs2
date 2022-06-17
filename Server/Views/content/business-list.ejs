@@ -24,8 +24,14 @@
                             <td><%= business[count].Name %></td>
                             <td><%= business[count].Contact %></td>
                             <td><%= business[count].Email %></td>
-                            <td></td>
-                            <td></td>
+                            <% if(display !== '') { %>
+                                <td>
+                                    <a href="/business-list/edit/<%= contacts[count]._id %>" class="btn btn-primary btn-sm bg-primary" type="button"><i class="fas fa-edit fa-sm"></i> Edit</a>
+                                </td>
+                                <td>
+                                    <a href="/business-list/delete/<%= contacts[count]._id %>" class="btn btn-primary btn-sm bg-danger confirm" type="button"><i class="fas fa-trash-alt fa-sm"></i> Delete</a>
+                                </td>
+                                <% } %>
                         </tr>
                     <% } %>
                 </tbody>
