@@ -6,32 +6,24 @@
         <div class="input-group mb-3">
             <span class="input-group-text" id="contactName">Contact Name</span>
             <input id="contactName" type="text" class="form-control" placeholder="Contact Name"
-                aria-label="Contact Name" aria-describedby="Contact Name" name="Name"
+                aria-label="Contact Name" aria-describedby="Contact Name" name="contactName"
                 value="<%= business.Name%>" required>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="contactNumber">Contact Number</span>
             <input id="contactNumber" type="text" class="form-control" placeholder="Contact Number"
-                aria-label="Contact Number" aria-describedby="Contact Number" name="Contact"
+                aria-label="Contact Number" aria-describedby="Contact Number" name="contactNumber"
                 value="<%= business.Contact%>" required>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="emailAddress">Email Address</span>
             <input id="emailAddress" type="text" class="form-control" placeholder="Email Address"
-                aria-label="Email Address" aria-describedby="Email Address" name="Email"
+                aria-label="Email Address" aria-describedby="Email Address" name="emailAddress"
                 value="<%= business.Email%>" required>
         </div>
-
-        <% if (title.search("Edit") > -1 ) { %>
- <button type="submit" id="submitButton" class="btn btn-primary">
+        <button type="submit" id="submitButton" class="btn btn-primary">
             <i class="fas fa-edit fa-lg"></i>Edit
         </button>
-        <% } else { %>
-         <button type="submit" id="submitButton" class="btn btn-primary">
-            <i class="fas fa-edit fa-lg"></i>Add
-        </button>
-         
-        <% } %>
 
         <a href="/business-list" id="cancelButton" type="button" class="btn btn-warning"><i class="fas fa-undo"></i> Cancel</a>
 
