@@ -24,7 +24,6 @@ import User from '../Models/user';
 
 // import router data from the router module(s)
 import indexRouter from '../Routes/index'; 
-import movieListRouter from '../Routes/movie-list';
 import authRouter from '../Routes/auth';
 import businessListRouter from '../Routes/business-list'
 
@@ -83,7 +82,6 @@ passport.deserializeUser(User.deserializeUser());
 
 // add routing 
 app.use('/', indexRouter);
-app.use('/', movieListRouter);
 app.use('/', authRouter);
 app.use('/', businessListRouter)
 
