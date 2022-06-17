@@ -18,12 +18,13 @@ function DisplayBusinessListPage(req, res, next) {
 exports.DisplayBusinessListPage = DisplayBusinessListPage;
 function DisplayBusinessEditPage(req, res, next) {
     let id = req.params.id;
-    business_1.default.find(function (err, businessCollection) {
+    business_1.default.findById({ _id: id }, {}, {}, function (err, contactItemToEdit) {
+        console.error(business_1.default.findById);
         if (err) {
             console.error(err.message);
             res.end(err);
         }
-        res.render('index', { title: 'Business Contact List', page: 'business-list', business: businessCollection, displayName: (0, Util_1.UserDisplayName)(req) });
+        res.render('index', { title: 'Business Contact List edit', page: 'business-list-edit', item: contactItemToEdit, displayName: (0, Util_1.UserDisplayName)(req) });
     });
 }
 exports.DisplayBusinessEditPage = DisplayBusinessEditPage;
