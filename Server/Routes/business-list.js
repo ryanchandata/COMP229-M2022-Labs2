@@ -9,6 +9,7 @@ const business_list_1 = require("../Controllers/business-list");
 const index_1 = require("../Util/index");
 router.get('/business-list', index_1.AuthGuard, business_list_1.DisplayBusinessListPage);
 router.get('/business-list-edit/:id', index_1.AuthGuard, business_list_1.DisplayBusinessEditPage);
+router.post('/business-list-edit/:id', index_1.AuthGuard, business_list_1.ProcessBusinessEditPage);
 router.get('/business-list/delete/:id', index_1.AuthGuard, business_list_1.DeleteContact);
 exports.default = router;
 //# sourceMappingURL=business-list.js.map

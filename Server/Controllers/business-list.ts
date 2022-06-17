@@ -28,9 +28,27 @@ export function DisplayBusinessEditPage(req: express.Request, res: express.Respo
           console.error(err);
           res.end(err);
       };
-
-      console.log(contactItemToEdit);
       res.render('index', { title: "Contact Edit", page: "business-list-edit", business: contactItemToEdit, displayName: UserDisplayName(req) })
+  })
+}
+
+// Process (E)dit page
+export function ProcessBusinessEditPage(req: express.Request, res: express.Response, next: express.NextFunction) {
+  let id = req.params.id;
+
+  let updatedItem = new Business({
+      "_id": id,
+      "Name": req.body.Name,
+      "Contact": req.body.Contact,
+      "Email": req.body.Email
+  });
+
+  Business.updateOne({ _id: id }, updatedItem, {}, (err) => {
+      if (err) {
+          console.error(err);
+          res.end(err);
+      }
+      res.redirect('/business-list');
   })
 }
 
