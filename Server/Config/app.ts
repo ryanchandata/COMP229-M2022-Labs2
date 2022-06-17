@@ -26,6 +26,7 @@ import User from '../Models/user';
 import indexRouter from '../Routes/index'; 
 import movieListRouter from '../Routes/movie-list';
 import authRouter from '../Routes/auth';
+import businessListRouter from '../Routes/business-list'
 
 // create the application object - which is of type express
 const app = express();
@@ -84,6 +85,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/', indexRouter);
 app.use('/', movieListRouter);
 app.use('/', authRouter);
+app.use('/', businessListRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 

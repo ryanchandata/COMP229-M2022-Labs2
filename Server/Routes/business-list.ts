@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 
-import { DisplayMovieListPage } from '../Controllers/business-list';
+import { DisplayBusinessListPage } from '../Controllers/business-list';
 
 import { AuthGuard } from '../Util/index';
 
