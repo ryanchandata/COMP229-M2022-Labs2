@@ -5,7 +5,7 @@ import Business from '../Models/business';
 
 import { UserDisplayName  } from '../Util';
 
-export function DisplayMovieListPage(req: express.Request, res: express.Response, next: express.NextFunction) 
+export function DisplayBusinessListPage(req: express.Request, res: express.Response, next: express.NextFunction) 
 {
   Business.find(function(err, businessCollection)
     {

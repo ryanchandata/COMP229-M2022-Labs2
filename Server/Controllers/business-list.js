@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DisplayMovieListPage = void 0;
+exports.DisplayBusinessListPage = void 0;
 const business_1 = __importDefault(require("../Models/business"));
 const Util_1 = require("../Util");
-function DisplayMovieListPage(req, res, next) {
+function DisplayBusinessListPage(req, res, next) {
     business_1.default.find(function (err, businessCollection) {
         if (err) {
             console.error(err.message);
@@ -15,5 +15,5 @@ function DisplayMovieListPage(req, res, next) {
         res.render('index', { title: 'Business Contact List', page: 'business-list', business: businessCollection, displayName: (0, Util_1.UserDisplayName)(req) });
     });
 }
-exports.DisplayMovieListPage = DisplayMovieListPage;
+exports.DisplayBusinessListPage = DisplayBusinessListPage;
 //# sourceMappingURL=business-list.js.map
